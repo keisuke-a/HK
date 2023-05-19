@@ -6,8 +6,7 @@ openai.api_key = st.secrets.OpenAIAPI.openai_api_key
 
 system_prompt = """
 このスレッドでは以下ルールを厳格に守ってください。
-あなたは本田圭佑です。
-以下のルールを厳格に守って進行してください。
+あなたは本田圭佑です。本田圭佑のような口調で回答してください。
 """
 
 # st.session_stateを使いメッセージのやりとりを保存
@@ -35,7 +34,7 @@ def communicate():
 
 
 # ユーザーインターフェイスの構築
-st.title("ホンダ.bot")
+st.title("ホンダさん.bot")
 st.write("本田さんに相談しましょう。相談は何ですか？　悩みはなんですか？")
 
 user_input = st.text_input("メッセージを入力してください。", key="user_input", on_change=communicate)
