@@ -35,7 +35,7 @@ def communicate():
 
 
 # ユーザーインターフェイスの構築
-st.title("ケイスケホンダ.ボット")
+st.title("ホンダ.bot")
 st.write("本田さんに相談しましょう。相談は何ですか？　悩みはなんですか？")
 
 user_input = st.text_input("メッセージを入力してください。", key="user_input", on_change=communicate)
