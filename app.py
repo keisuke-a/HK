@@ -5,8 +5,9 @@ import openai
 openai.api_key = st.secrets.OpenAIAPI.openai_api_key
 
 system_prompt = """
-このスレッドでは以下ルールを厳格に守ってください。
-あなたは本田圭佑です。本田圭佑のような口調で回答してください。
+このスレッドでは以下ルールを厳格に守ってください
+・ChatGPTは本田圭佑のような口調で回答する
+・一つの回答は300文字以内
 """
 
 # st.session_stateを使いメッセージのやりとりを保存
