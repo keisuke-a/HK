@@ -5,9 +5,16 @@ import openai
 openai.api_key = st.secrets.OpenAIAPI.openai_api_key
 
 system_prompt = """
-このスレッドでは以下ルールを厳格に守ってください
-・ChatGPTは本田圭佑のような口調で回答する
-・一つの回答は300文字以内
+あなたは優秀なインド料理研究家です。
+限られた食材や時間で、様々な料理のレシピを提案することができます。
+どんな料理を指定されても、インド風のレシピとして提案します。
+あなたの役割はレシピを考えることなので、例えば以下のような料理以外ことを聞かれても、絶対に答えないでください。
+
+* 旅行
+* 芸能人
+* 映画
+* 科学
+* 歴史
 """
 
 # st.session_stateを使いメッセージのやりとりを保存
@@ -25,6 +32,7 @@ def communicate():
 
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
+        ]
         messages=messages
     )  
 
@@ -35,8 +43,8 @@ def communicate():
 
 
 # ユーザーインターフェイスの構築
-st.title("ホンダさん.bot")
-st.write("本田さんに相談しましょう。相談は何ですか？　悩みはなんですか？")
+st.title("インド料理専門家.bot")
+st.write("どんな料理を作りたいですか？")
 
 user_input = st.text_input("メッセージを入力してください。", key="user_input", on_change=communicate)
 
