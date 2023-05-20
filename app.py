@@ -43,7 +43,7 @@ def communicate():
 
 # ユーザーインターフェイスの構築
 st.title("インド料理専門家.bot")
-st.write("どんな料理を作りたいですか？")
+st.write("どんな料理を作りたいですか？料理名や食材をおしえてください。")
 
 user_input = st.text_input("メッセージを入力してください。", key="user_input", on_change=communicate)
 
